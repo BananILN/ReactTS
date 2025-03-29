@@ -1,7 +1,16 @@
+import { on } from "events";
 import React from "react"
 
-export default function Button (){
+interface IButtonprops{
+    buttonText: string;
+    onClick: (event:React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+}
+
+export default function Button (props:IButtonprops){
+
+    const {buttonText, onClick} = props; 
+    
     return (
-        <div>button</div>
+        <button onClick={onClick}> {buttonText} </button>
     )
 }
